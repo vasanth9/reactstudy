@@ -1,51 +1,15 @@
-.Hide{
-    display:block;
-   
-}
-.Show{
-    display: none;
-}
-p{
-    font-size: 80px;
-    text-align: center;
-}
-h1{
-    text-align: center;
-}
-button{
-    border:none;
-    border-radius: 30px;
-    font-size: 30px;
-    padding: 10px 10px 10px 10px;
-    margin: 30px 30px 30px 30px;
-    cursor: pointer;
-}
-.ProgressBar{
-    text-align: center;
-    margin-left: 10%;
-    height:40px;
-    width:80%;
-    border-radius: 50px;
-    border:1px solid #333;
-}
-.fill{
-    background:#1DA598;
-    height:100%;
-    border-radius: inherit;
-    transition: width .2s ease-out;
-}
-input{
-    font-size: 30px;
-    width: 100px;
-}
-span{
-    font-size: 30px;
-    width: 130px; 
-    padding-left:10px;
-    padding-right: 30px;
-}
-.main{
-    height:100vh;
-    width:100vw;
-    background-color: lightblue;
-}
+.column {
+    float: left;
+    width: 30%;
+    padding: 5px;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  span{
+      text-align: center;
+  }

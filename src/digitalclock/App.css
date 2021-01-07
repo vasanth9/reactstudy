@@ -1,13 +1,10 @@
 @font-face{
     font-family:'digital-7';
-    src: local('digital-7'),url('./fonts/digital-7.ttf')format('truetype');
+    src: local('digital-7'),url('../fonts/digital-7.ttf')format('truetype');
    }
   
-body{
-   background-color: black; 
-  
-}
-h1
+
+#header
 {  font-family:'digital-7';
     font-size: 80px;
     color: #32cd32;

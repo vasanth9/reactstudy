@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css'
 
 import SearchForm from './SearchForm';
-import List from '../List';
+import List from './List';
 
 
 
@@ -92,7 +92,7 @@ const PARAM_SEARCH='query=';
 const PARAM_PAGE='page=';
 
 
-const App = () => {
+const Hacknews= () => {
   const [searchTerm, setSearchTerm] = useSemiPersistentState(
     'search',
     'React'
@@ -241,4 +241,4 @@ const LastSearches =({lastSearches,onLastSearch})=>(
 
 
 
-export default App;
+export default Hacknews;

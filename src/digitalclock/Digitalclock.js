@@ -1,7 +1,7 @@
 import React ,{useState,useEffect}from 'react';
 import './App.css'
 
-export default function App() {
+export default function Digitalclock() {
     
     const [hours,setHours]=useState("00");
     const [minutes,setMinutes]=useState("00");
@@ -31,7 +31,7 @@ export default function App() {
    
     return (
         <div>
-            <h1>Digital Clock</h1>
+            <h1 id="header">Digital Clock</h1>
             <hr/>
             <h1 className="date">{date}</h1>
            <h1 className="glow">{hours}
