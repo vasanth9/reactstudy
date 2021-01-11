@@ -30,11 +30,11 @@ export default function Digitalclock() {
 },[seconds,minutes,hours,date]);
    
     return (
-        <div>
+        <div id="bg" >
             <h1 id="header">Digital Clock</h1>
             <hr/>
-            <h1 className="date">{date}</h1>
-           <h1 className="glow">{hours}
+            <h1 id="header" className="date">{date}</h1>
+           <h1 id="header" className="glow">{hours}
            :{minutes}
            :{seconds}</h1>
            
