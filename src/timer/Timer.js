@@ -1,5 +1,5 @@
 import React ,{useState,useEffect}from 'react';
-import './App.css'
+import './TimerApp.css'
 
 export default function Timer() {
     const [count,setCount]=useState(0);

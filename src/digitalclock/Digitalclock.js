@@ -1,5 +1,5 @@
 import React ,{useState,useEffect}from 'react';
-import './App.css'
+import './DigiApp.css'
 
 export default function Digitalclock() {
     
