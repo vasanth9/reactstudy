@@ -7,7 +7,7 @@ import StopWatch from './stopwatch/Stopwatch';
 import Timer from './timer/Timer';
 import Hackernews from './hacker/Hacknews';
 import Digitalclock from './digitalclock/Digitalclock';
-
+import Todo from './Day010Todo/Todo';
 export default function App() {
     return(<>
     <Router>
@@ -20,6 +20,7 @@ export default function App() {
     
 </Route>
     <Route path="/digitalclock" component={Digitalclock}/>
+    <Route path="/Day010Todo" component={Todo}/>
     </Switch> 
     
     
@@ -56,6 +57,12 @@ export default function App() {
        <img src={logo} alt="Day007"/>
     </Link>
     <span><h4>Day007</h4></span>
+    </div>
+    <div className="column">
+     <Link to='/Day010Todo'>
+       <img src={logo} alt="Day010"/>
+    </Link>
+    <span><h4>Day010</h4></span>
     </div>
     </div>
      </>)
