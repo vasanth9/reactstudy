@@ -17,7 +17,7 @@ export default function Todo() {
     
     ]);
     console.log(todos)
-    setUid(x=>x+1)
+    setUid(y=>y+1)
     setItem("");
   }
    function handleDelete(x){
