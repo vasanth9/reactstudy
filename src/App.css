@@ -7,8 +7,9 @@
 }
 .arrayElement{
     display: inline-block;
-    margin:0 2px;
+    
     background-color: white;
+    vertical-align:bottom;
 }
 .header{
     display: inline-block;
