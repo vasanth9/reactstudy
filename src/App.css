@@ -1,3 +1,18 @@
 body{
     background-color: blueviolet;
 }
+h1{
+    text-align: center;
+    color: white;
+}
+.imgContainer{
+    display: inline-block;
+    height:30vh;
+    width: 30vw;
+    margin-left: 5vw;
+}
+img{
+    height:25vh;
+   
+
+}
