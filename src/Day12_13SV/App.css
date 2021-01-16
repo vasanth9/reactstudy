@@ -1,0 +1,26 @@
+.arrayContainer{
+    height:80vh;
+    width:80vw;
+    background-color: black;
+    border: chartreuse solid;
+    margin-left:10vw;
+}
+.arrayElement{
+    display: inline-block;
+    
+    background-color: white;
+    vertical-align:bottom;
+}
+.header{
+    display: inline-block;
+    margin-left:40px ;
+}
+button{
+    font-size: larger;
+    background-color: black;
+    border:none;
+    color:white;
+    cursor: pointer;
+    padding:10px;
+    border-radius: 40px;
+}
