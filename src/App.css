@@ -1,94 +1,17 @@
-body{
-    background-color: cornsilk;
+input{
+    font-size: 30px;
+    border-radius: 2%;
+    border:none;
+    padding:2px 2px 2px 2px;
+    margin:10px 10px 10px 10px;
+    display: inline-block;
 }
-h1{
-    text-align: center;
-   
-}
-.form{
-    min-height: 8vh;
-    min-width:90vw;
-    margin-left:5vw ;
-}
-
-.input{
-    height:4vh;
-    font-size: 25px;
-    width:60vw;
-    border-radius: 6px;
-}
-.submitButton{
-    margin-left: 5vw;
-    height:4vh;
-    font-size: 25px;
+button{
+    font-size: 30px;
+    border-radius: 2%;
+    border:none;
+    padding:2px 2px 2px 2px;
+    margin:6px 6px 6px 6px;
+    display: inline-block;
     width:20vw;
-    background-color: rgb(49, 253, 8);
-    border:none;
-    border-radius: 20px;
-    color:cornsilk;
-    font-weight: 800;
-}
-
-.card{
-    background-color: white;
-    display:inline-block;
-    margin-left:2% ;
-    margin-top:10px;
-    margin-bottom:10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 23%;
-    height: 400px;
-    vertical-align: top;
-    overflow:hidden;
-    position: relative;
-    border-radius: 3px;
-   
-}
-.part2{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 1em;
-    padding: 1em;
-}
-h5{
-    margin: 1em;
-    letter-spacing: 0.5px;
-}
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-img{
-      border:3px solid black;
-      display:block;
-      margin:auto;
-  }
-.but{
-    width: 40%;
-    margin-left: 8%;
-    font-size: 18px;
-    border:none;
-    border-radius: 5px;
-   }
-.pre{
-    background-color: cyan;
-}
-.buy{
-    background-color: darkorange;
-}
-.overview {
-    background-color: #fff;
-    padding: 2rem;
-    position: absolute;
-    max-height: 100%;
-    overflow: auto;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    transform: translateY(101%);
-    transition: transform 0.3s ease-in;
-}
-
-.card:hover .overview {
-    transform: translateY(0);
 }

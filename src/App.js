@@ -1,81 +1,82 @@
-import React,{useState} from 'react'
+import React ,{useState}from 'react'
 import './App.css'
-import axios from 'axios';
 export default function App() {
-
-   const [query,setQuery]=useState("");
-   const [loading,setLoading]=useState(false);
-   const [book,setBook]=useState([]);
-
-
-
-
-    const handleInput=e=>{
-        setQuery(e.target.value)
-    }
-    const handleSubmit=e=>{
-        e.preventDefault();
-        setLoading(true)
-        let q=`https://www.googleapis.com/books/v1/volumes?q=${query}`;
-        axios.get(q).then(res=>{
-            
-            if(res.status===200)
-            {
-                setBook(res.data.items);
-                console.log(book)
-            }
-            else{
-                console.log(res);
-            }
-        });
-        setLoading(false)
-
-
-    }
+  
+   const [state,setState]=useState({
+       red:"00",
+       blue:"00",
+       green:"00",
+      
+   })
+   const handleInput=e=>{
+       const value=e.target.value;
+       
+       setState({
+           ...state,
+          [e.target.name]:value
+       });
+       
+       console.log(value)
+   }
+   const handleSubmit=e=>{
+       e.preventDefault();
+       var msg="";
+     if(isHex(state.red))
+     {
+         msg+="Red should be between 00 and FF\n";
+     }
+     if(isHex(state.blue))
+     {
+         msg+="Blue should be between 00 and FF\n";
+     }
+     if(isHex(state.green))
+     {
+         msg+="Green should be between 00 and FF\n";
+     }
+     if(msg.length!==0)
+     {
+         alert(msg)
+     }
+     else{
+       var hex= state.red+state.green+state.blue;
+       var dec=hextodec(hex);
+         //startAnimation();
+     }  
+   }
     return (
-        <div>
-           <h1> Google Books</h1>
-           <div className="form">
-               <form onSubmit={handleSubmit}>
-                   <input type="text" 
-                   className="input"
-                   onChange={handleInput}
-                   placeholder="Search by Author or Title"
-                   value={query}
-                   ></input>
-                   <button type="submit" 
-                   className="submitButton"
-                   
-                   >Search</button>
-               </form>
-               
-           </div>
-           
-           {loading?<p>Loading.....</p>:""}
-           <div className="book-list">{
-                     book.map(
-                         item=>{return(
-                             <div className="card" key={item.id}>
-                                 <h1>{item.volumeInfo.title}</h1>
-                                 <img className="part2"
-                                 src={item.volumeInfo.imageLinks===undefined?"":
-                                 item.volumeInfo.imageLinks.smallThumbnail}
-                                 alt={item.volumeInfo.title}
-                                 />
-                                <div className="overview"> 
-                                 <h5 >{item.volumeInfo.description}</h5>
-                                 
-                                  <a href={item.volumeInfo.previewLink}
-                                target="_blank"
-                                ><button className="but pre">Preview</button></a>
-                                <a href={item.saleInfo.buyLink}
-                                target="_blank"
-                                ><button className="but buy">Buy</button></a>
-                               </div>
-                                 </div>)
-                         }
-                     )}
-           </div>
+        <div style={{backgroundColor:`#${state.red+state.green+state.blue}`,height:"100vh",width:"100vw"}}>
+            <center><h1 style={{backgroundColor:'white'}}>COLOR CYCLE</h1></center>
+           <form onSubmit={handleSubmit}>
+           <center> 
+            <input placeholder="Red"  value={state.red} name="red" onChange={handleInput} />
+            <input placeholder="Green" value={state.green} name="green" onChange={handleInput}/>
+            <input placeholder="Blue" value={state.blue} name="blue" onChange={handleInput}/>
+            </center>
+            <center> 
+            <button type="submit" name="Submit" value="Submit">Submit</button>
+            </center> 
+            </form>
         </div>
-    );
+    )
+} 
+function isHex(x){
+   if(x.length!==2)return 1;
+   var re=/[0-9A-Fa-f]{2}/g;
+   if(re.test(x))
+   return 0;
+   return 1;
+}
+function hextodec(x)
+{let sum=0;
+    for(let i=0;i<6;i++)
+    {var z=x[5-i];
+        let p=Math.pow(16,i);
+        if(z==='number')
+        { 
+           sum=sum+(p*(z-'0')) 
+        }
+        else{
+           
+        }
+    }
 }
