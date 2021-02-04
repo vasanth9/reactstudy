@@ -1,4 +1,4 @@
-import React ,{useState}from 'react'
+import React ,{useState,useEffect}from 'react'
 import './App.css'
 export default function App() {
   
@@ -6,8 +6,31 @@ export default function App() {
        red:"00",
        blue:"00",
        green:"00",
+       start:"Start"
       
-   })
+   });
+   useEffect(()=>{
+    var intervalId;
+    if(state.start==="Stop")
+    {
+       intervalId=setInterval(()=>{
+         var hex= state.red+state.green+state.blue;
+         var dec=hextodec(hex);
+         const red=dec.substring(0,2);
+         const green=dec.substring(2,4);
+         const blue=dec.substring(4)
+         setState({
+             ...state,
+            red:red,
+            green:green,
+            blue:blue
+         });
+       },25) 
+    }
+   
+     return ()=>clearInterval(intervalId);
+    
+   },[state])
    const handleInput=e=>{
        const value=e.target.value;
        
@@ -20,6 +43,14 @@ export default function App() {
    }
    const handleSubmit=e=>{
        e.preventDefault();
+       if(state.start==="Start")setState({
+        ...state,
+       start:"Stop"
+    });
+    else setState({
+        ...state,
+       start:"Start"
+    });
        var msg="";
      if(isHex(state.red))
      {
@@ -38,24 +69,28 @@ export default function App() {
          alert(msg)
      }
      else{
-       var hex= state.red+state.green+state.blue;
-       var dec=hextodec(hex);
-         //startAnimation();
+       
+       
+      
+        
      }  
    }
     return (
         <div style={{backgroundColor:`#${state.red+state.green+state.blue}`,height:"100vh",width:"100vw"}}>
+             <div style={{backgroundColor:state.start==="Stop"?'white':'grey'}}>
             <center><h1 style={{backgroundColor:'white'}}>COLOR CYCLE</h1></center>
-           <form onSubmit={handleSubmit}>
-           <center> 
-            <input placeholder="Red"  value={state.red} name="red" onChange={handleInput} />
-            <input placeholder="Green" value={state.green} name="green" onChange={handleInput}/>
-            <input placeholder="Blue" value={state.blue} name="blue" onChange={handleInput}/>
+           
+           <form onSubmit={handleSubmit} >
+           <center > 
+            <input placeholder="Red"  value={state.red} name="red" onChange={handleInput} disabled={state.start==="Stop"?true:false}/>
+            <input placeholder="Green" value={state.green} name="green" onChange={handleInput} disabled={state.start==="Stop"?true:false}/>
+            <input placeholder="Blue" value={state.blue} name="blue" onChange={handleInput} disabled={state.start==="Stop"?true:false}/>
             </center>
             <center> 
-            <button type="submit" name="Submit" value="Submit">Submit</button>
+            <button type="submit" name="Submit" value={state.start}>{state.start}</button>
             </center> 
             </form>
+            </div>
         </div>
     )
 } 
@@ -67,16 +102,10 @@ function isHex(x){
    return 1;
 }
 function hextodec(x)
-{let sum=0;
-    for(let i=0;i<6;i++)
-    {var z=x[5-i];
-        let p=Math.pow(16,i);
-        if(z==='number')
-        { 
-           sum=sum+(p*(z-'0')) 
-        }
-        else{
-           
-        }
-    }
+{
+    
+    var n=parseInt(x,16);
+    n+=1;
+
+    return n.toString(16).padStart(6,'0');
 }
