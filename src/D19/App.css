@@ -1,0 +1,17 @@
+input{
+    font-size: 30px;
+    border-radius: 2%;
+    border:none;
+    padding:2px 2px 2px 2px;
+    margin:10px 10px 10px 10px;
+    display: inline-block;
+}
+button{
+    font-size: 30px;
+    border-radius: 2%;
+    border:none;
+    padding:2px 2px 2px 2px;
+    margin:6px 6px 6px 6px;
+    display: inline-block;
+    width:20vw;
+}
