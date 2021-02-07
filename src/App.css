@@ -1,5 +1,41 @@
-.app__itemsContainer{
-    scroll-snap-type: y mandatory;
-    overflow: auto;
-    height:100vh;
+.Container{
+    background-color: antiquewhite;
+    width:400px;
+    height:auto;
+    margin-top: 40px;
+    border-radius: 3%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+button{
+    background-color: transparent;
+    border-radius: 20%;
+    border:none;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    margin: 8px;
+    padding:8px;
+
+}
+.button__center{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+}
+.P{
+    font-size: large;
+    font-weight: bold;
+    margin:8px ;
+    padding:10px;
+    display:flex;
+    justify-content: center;
 }
