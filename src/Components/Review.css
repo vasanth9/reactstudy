@@ -1,0 +1,94 @@
+
+.img-container
+{
+    position: relative;
+    width:150px;
+    height: 150px;
+    border-radius: 50%;
+    margin:0 auto;
+    margin-bottom: 1.5rem;
+}
+.img-container::before{
+    content: "";
+    width:100%;
+    height:100%;
+    background-color: hsl(205,78%,60%);
+    position: absolute;
+    top:-0.25rem;
+    right:-0.25rem;
+    border-radius: 50%;
+}
+.person-img{
+    width:100%;
+    display:block;
+    height:100%;
+    object-fit:cover;
+    border-radius: 50%;
+    position:relative;
+
+}
+.quote-icon{
+    position: absolute;
+    top:0;
+    left:0;
+    width:2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    transform: translateY(25%);
+    background: hsl(205,78%,60%);
+    color:white;
+}
+.review{
+    background:white ;
+    padding:1.5rem 2rem;
+    border-radius:0.25rem ;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1) ;
+    transition:all 0.3 linear;
+    text-align: center;
+}
+.review:hover{
+    box-shadow:0 5px 15px rgba(0,0,0,0.5) ;
+}
+.author{
+    margin-bottom: 0.25rem;
+}
+.job{
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: hsl(205,78%,60%);
+    font-size: 0.85rem;
+}
+.info{
+    margin-bottom: 0.75rem; 
+}
+.prev-btn,
+.next-btn{
+    color: hsl(211,27%,70%);
+    font-size: 1.25rem;
+    background: transparent;
+    border-color: transparent;
+    margin:0 0.5rem;
+    transition:all 0.3 linear;
+    cursor: pointer;
+}
+.prev-btn:hover,
+.next-btn:hover{
+    color: hsl(205,78%,60%);
+}
+.random-btn{
+    margin-top: 0.5rem;
+    background-color: hsl(210,100%,96%);
+    color:hsl(205,78%,60%);
+    padding:0.25rem 0.5rem;
+    text-transform: capitalize;
+    border-radius: 0.25rem;
+    transition: all 0.3 linear;
+    border-color: transparent;
+    cursor: pointer;
+}
+.random-btn:hover{
+    background-color: hsl(205,78%,60%);
+    color:white;
+}
